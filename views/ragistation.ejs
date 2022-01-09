@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Harsukh Makwana">
+  <title>registation</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="mt-5 text-center">Register</h1><hr>
+        <div class="col-lg-6 offset-3">
+          <form action="/signup" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label >Surname  Name</label>
+              <input type="text" class="form-control"  name="surname" placeholder="Enter Name"  value="<%= values.surname %>">
+
+              <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                <div style="color: red;">
+                    <%= error1 %>
+                </div>
+                <% } %>
+
+            </div>
+            <div class="form-group">
+              <label for="name"> FIRST Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Enter Name"  value="<%= values.name %>">
+              
+              <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                <div style="color: red;">
+                    <%= error2 %>
+                </div>
+                <% } %>
+
+            </div>
+            <div class="form-group">
+              <label for="name"> Number</label>
+              <input type="text" class="form-control"  name="number" placeholder="Enter Name"  value="<%= values.number %>" >
+             
+              <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                <div style="color: red;">
+                    <%= error3 %>
+                </div>
+                <% } %>
+            
+            
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" name="email" placeholder="Enter Email"  value="<%= values.email %>">
+           
+              <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
+                <div style="color: red;">
+                    <%= error4 %>
+                </div>
+                <% } %>
+           
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"  value="<%= values.password %>">
+            
+              <% if (typeof error5 !=='undefined' && error5.length> 0) { %>
+                <div style="color: red;">
+                    <%= error5 %>
+                </div>
+                <% } %>
+            
+            </div>
+              <label for="password">Conform Password</label>
+              <input type="password" class="form-control" id="password" name="passwordone" placeholder="Enter Password"  value="<%= values.passwordone %>">
+            
+              <% if (typeof error6 !=='undefined' && error6.length> 0) { %>
+                <div style="color: red;">
+                    <%= error6 %>
+                </div>
+                <% } %>
+            
+            </div><br>
+            
+            <label style="margin-left: 26.5%;" name="gender"> Gender :</label>
+            <input type="radio" value="Male" name="gender" <%= values.gender== "Male" ? 'checked':''  %>  > Male
+            <input type="radio" value="Female" name="gender"  <%= values.gender== "Female" ? 'checked':''  %> > Female
+            <input type="radio" value="Other" name="gender" <%= values.gender== "Other" ? 'checked':''  %> > Other
+            <% if (typeof error7 !=='undefined' && error7.length> 0) { %>
+                <div style="color: red;">
+                    <%= error7 %>
+                </div>
+                <% } %>
+              
+           <br><br>
+           <select class="form-control" id="exampleFormControlSelect1"  name="selectcountry" style="margin-left: 26.5%;" >
+
+           <!-- <select  name="selectcountry" style="margin-left: 26.5%;" > -->
+            <option selected="" disabled="" >Select Your state</option>
+            <option value="GUJRAT" <%= values.selectcountry== "GUJRAT" ? 'selected':''  %> >GUJRAT</option>
+            <option value="DELHI"  <%= values.selectcountry== "DELHI" ? 'selected':''  %>>DELHI</option>
+            <option value="MUMBAI"  <%= values.selectcountry== "MUMBAI" ? 'selected':''  %>>MUMBAI</option>
+            <option value="KOLKATA"  <%= values.selectcountry== "KOLKATA" ? 'selected':''  %>>KOLKATA</option>
+            <option value="BENGLORE"  <%= values.selectcountry== "BENGLORE" ? 'selected':''  %>>BENGLORE</option>
+            <option value="PUNE"  <%= values.selectcountry== "PUNE" ? 'selected':''  %>>PUNE</option>
+            <option value="RAJSTHAN"  <%= values.selectcountry== "RAJSTHAN" ? 'selected':''  %>>RAJSTHAN</option>
+            <option value="JAMMU & KASHMIR"  <%= values.selectcountry== "JAMMU & KASHMIR" ? 'selected':''  %>>j&k</option>
+           </select>
+           
+           <% if (typeof error8 !=='undefined' && error8.length> 0) { %>
+            <div style="color: red;">
+                <%= error8 %>
+            </div>
+            <% } %>
+          <br><br>
+  <div style="margin-left: 27%;">
+              <input type="checkbox"  name="hoby" value="cricket" <%=values.hoby=="cricket" ? 'checked' : ''  %> >
+              <label for="vehicle1"  > CRICKET </label><br>
+              <input type="checkbox"  name="hoby" value="hockey"  <%values.hoby== "hockey" ? 'checked' : ''  %>>
+              <label for="vehicle2"  > HOCKEY</label><br>
+              <input type="checkbox"  name="hoby" value="football"   <%=values.hoby=="football" ? 'checked' : ''  %>> 
+              <label for="vehicle3"  > FOOTBALL</label><br><br>
+          </div>
+            <% if (typeof error9 !=='undefined' && error9.length> 0) { %>
+              <div style="color: red;">
+                  <%= error9 %>
+              </div>
+              <% } %>
+              <br>
+              <label style="margin-left: 27%;" > image </label>
+              <input type="file" name="image" value="<%= values.image %>" > 
+               <% if (typeof error10 !=='undefined' && error10.length> 0) { %>
+                <div style="color: red;">
+                    <%= error10 %>
+                </div>
+                <% } %>
+                <br><br><br>
+            <button href="/"type="submit" class="btn btn-success" style="margin-left: 45%;">Sign Up</button><br><br><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
